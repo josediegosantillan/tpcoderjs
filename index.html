@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<!--
+El codigo es para hacer un turnero solo para un mes.
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnero</title>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <main>
+        <h1>Turnero</h1>
+        <h2>Descripción del Programa: Turnero</h2>
+        <h3>Funcionamiento del Programa</h3>
+        <p>El programa funciona de la siguiente manera:</p>
+        <ol>
+            <li>Registro de datos personales : Valida nombre y email del paciente</li>
+            <li>Selección de ubicación : Ofrece dos consultorios (Capital Federal y Vicente López)</li>
+            <li>Agenda de turnos : Solo disponible para el mes de septiembre</li>
+            <li>Validación de fechas : Verifica días laborables del mes (lunes a viernes)</li>
+            <li>Selección de horarios : De 9:00 a 17:00 hs</li>
+            <li>Confirmación final : Muestra resumen completo del turnol</li>
+        </ol>
+        <section class="turno-form">
+            <form id="turnoForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="ubicacion">Ubicación:</label>
+                <select id="ubicacion" name="ubicacion" required>
+                    <option value="capital">Capital Federal</option>
+                    <option value="vincente">Vicente López</option>
+                </select>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <label for="horario">Horario:</label>
+                <input type="time" id="horario" name="horario" required>
+                <button type="submit">Confirmar Turno</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
