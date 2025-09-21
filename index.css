@@ -28,3 +28,34 @@
 .turno-form button:hover {
     background-color: #0056b3;
 }
+
+
+#turnosAgendados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}   
+.tarjeta-consulta {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 24px 20px;
+    transition: box-shadow 0.2s;
+}
+.tarjeta-consulta:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.tarjeta-consulta h2 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.4em;
+}
+.tarjeta-consulta p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 1em;
+}

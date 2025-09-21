@@ -12,18 +12,8 @@ El codigo es para hacer un turnero solo para un mes.
 </head>
 <body>
     <main>
+
         <h1>Turnero</h1>
-        <h2>Descripción del Programa: Turnero</h2>
-        <h3>Funcionamiento del Programa</h3>
-        <p>El programa funciona de la siguiente manera:</p>
-        <ol>
-            <li>Registro de datos personales : Valida nombre y email del paciente</li>
-            <li>Selección de ubicación : Ofrece dos consultorios (Capital Federal y Vicente López)</li>
-            <li>Agenda de turnos : Solo disponible para el mes de septiembre</li>
-            <li>Validación de fechas : Verifica días laborables del mes (lunes a viernes)</li>
-            <li>Selección de horarios : De 9:00 a 17:00 hs</li>
-            <li>Confirmación final : Muestra resumen completo del turnol</li>
-        </ol>
         <section class="turno-form">
             <form id="turnoForm">
                 <label for="nombre">Nombre:</label>
@@ -42,6 +32,9 @@ El codigo es para hacer un turnero solo para un mes.
                 <button type="submit">Confirmar Turno</button>
             </form>
         </section>
+        <section id="turnosAgendadosSection">
+            <h2>Turnos Agendados</h2>
+            <div id="turnosAgendados"></div>
     </main>
 </body>
 </html>
