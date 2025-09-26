@@ -8,13 +8,6 @@ const turnosAgendadosDiv = document.getElementById('turnosAgendados')
 
 turnoForm.addEventListener('submit', function (e) {
     e.preventDefault()
-
-    const fechaValor = document.getElementById('fecha').value
-    if(fechaValor){
-        //descartar sábados (6) y domingos (0)
-        const dia = new Date(fechaValor + 'T00:00:00')
-    }
-
     const nuevaConsulta = {
         id: Date.now(),
         nombre: document.getElementById('nombre').value,
@@ -35,7 +28,7 @@ function renderConsultas() {
     turnosAgendadosDiv.innerHTML = ""
     consultas.forEach(consultas => {
         const consultaDiv = document.createElement('div')
-        consultaDiv.className = "arjeta-consulta"
+        consultaDiv.className = "tarjeta-consulta"
         consultaDiv.innerHTML = `
             <h2>Consulta agendada</h2>
             <p>Nombre: ${consultas.nombre}</p>
@@ -62,4 +55,28 @@ turnosAgendadosDiv.addEventListener('click', function(e){
     }
 })
 //renderConsultas al cargar la página para mostrar los turnos guardados.
-document.addEventListener('DOMContentLoaded',renderConsultas)
+// document.addEventListener('DOMContentLoaded',renderConsultas)
+
+document.addEventListener('DOMContentLoaded', function () {
+    renderConsultas()
+    const fechaInput = document.getElementById('fecha')
+    if (fechaInput) {
+        const hoy = new Date()
+        const yyyy = hoy.getFullYear()
+        console.log(yyyy)
+        const mm = String(hoy.getMonth() + 1).padStart(2, '0')
+        const dd = String(hoy.getDate()).padStart(2, '0')  // padStart(2,'0') para asegurar dos dígitos
+        fechaInput.min = `${yyyy}-${mm}-${dd}`
+        console.log(fechaInput.min)
+        //avisar si selecciona fin de semana
+        fechaInput.addEventListener('change', function () {
+            const valor = fechaInput.value
+            if (!valor) return
+            const dia = new Date(valor + 'T00:00:00').getDay()
+            if (dia === 0 || dia === 6) {
+                alert('Has seleccionado un fin de semana. Los turnos solo están disponibles de lunes a viernes.')
+                fechaInput.value = ''
+            }
+        })
+    }
+})

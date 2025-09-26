@@ -6,14 +6,14 @@ El codigo es para hacer un turnero solo para un mes.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turnero</title>
+    <title>Turnos online</title>
     <script defer src="./main.js"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <main>
 
-        <h1>Turnero</h1>
+        <h1>Reserva tu turno online</h1>
         <section class="turno-form">
             <form id="turnoForm">
                 <label for="nombre">Nombre:</label>
@@ -28,7 +28,17 @@ El codigo es para hacer un turnero solo para un mes.
                 <label for="fecha">Fecha:</label>
                 <input type="date" id="fecha" name="fecha" required>
                 <label for="horario">Horario:</label>
-                <input type="time" id="horario" name="horario" required>
+                <select id="horario" name="horario" required>
+                    <option value="">Seleccione un horario</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
                 <button type="submit">Confirmar Turno</button>
             </form>
         </section>
